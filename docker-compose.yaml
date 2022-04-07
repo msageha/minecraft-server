@@ -5,7 +5,7 @@ services:
   mc-athletic:
     image: itzg/minecraft-server
     ports:
-      - 25565:25565
+      - ${PORT}:25565
     environment:
       EULA: "TRUE"
       MEMORY: 4G
