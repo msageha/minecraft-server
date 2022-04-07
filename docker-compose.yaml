@@ -8,7 +8,7 @@ services:
       - 25565:25565
     environment:
       EULA: "TRUE"
-      MEMORY: 2G
+      MEMORY: 4G
       VERSION: "1.18.2"
     volumes:
       - ./data:/data
@@ -19,7 +19,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 2.5G
+          memory: 5G
 
   # Backup
   backup:
