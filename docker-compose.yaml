@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  # Application
+  mc-athletic:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565
+    environment:
+      EULA: "TRUE"
+      MEMORY: 2G
+      VERSION: "1.18.2"
+    volumes:
+      - ./data:/data
+      - /etc/timezone:/etc/timezone:ro
+    tty: true
+    stdin_open: true
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 2.5G
+
+  # Backup
+  backup:
+    image: itzg/mc-backup
+    depends_on:
+    - mc-athletic
+    volumes:
+      - ./data:/data:ro
+      - ./mc-backups:/backups
+      - /etc/timezone:/etc/timezone:ro
+    network_mode: "service:mc-athletic"
