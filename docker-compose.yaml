@@ -9,7 +9,7 @@ services:
     environment:
       EULA: "TRUE"
       MEMORY: 4G
-      VERSION: "1.18.2"
+      VERSION: "1.19.2"
     volumes:
       - ./data:/data
       - /etc/timezone:/etc/timezone:ro
