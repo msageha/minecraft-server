@@ -1,4 +1,8 @@
 
+PHONY: rcon-cli
+rcon-cli:
+	docker exec -i $(docker ps | grep "itzg/minecraft-server" | awk '{print $1}') rcon-cli
+
 PHONY: upload_to_gcs
 upload_to_gcs:
 	gcloud alpha storage cp -r data/* gs://mzk-bucket/mc/data
