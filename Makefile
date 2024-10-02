@@ -12,3 +12,8 @@ PHONY: rsync
 rsync:
 	rsync -av -e ssh ocloud-instance-1:~/Works/src/github.com/mzk622/minecraft-server/data/ ./data/
 	rsync -av -e ssh ocloud-instance-1:~/Works/src/github.com/mzk622/minecraft-server/mc-backups/ ./mc-backups/
+
+PHONY: run
+run:
+	cp ./server.properties ./data/server.properties
+	docker compose up -d
