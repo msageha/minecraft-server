@@ -10,6 +10,7 @@ services:
       EULA: "TRUE"
       MEMORY: 8G
       VERSION: "1.21.1"
+      TYPE: "PAPER"
     volumes:
       - ./data:/data
       - /etc/timezone:/etc/timezone:ro
