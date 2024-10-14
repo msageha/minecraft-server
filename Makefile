@@ -14,5 +14,5 @@ rsync:
 
 .PHONY: run
 run:
-	cp ./server.properties ./data/server.properties
+	sudo cp ./server.properties ./data/server.properties
 	docker compose up -d
